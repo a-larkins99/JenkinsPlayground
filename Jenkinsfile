@@ -40,8 +40,11 @@ pipeline {
         }
 
         stages {
-          stage("Create Python ${PYTHON_VERSION} Environment") {
+          stage("Create Python Environment") {
             steps {
+              
+              echo "Creating Python ${PYTHON_VERSION} conda environment"
+
               script {
                 sh '''
                     module purge
