@@ -7,9 +7,7 @@ def name_conda_env(String python_version) {
 
 pipeline {
 
-  agent {
-    label "rocky8"
-  }
+  agent none
 
   parameters {
     choice(
@@ -23,6 +21,11 @@ pipeline {
     stage("Setup and run") {
 
       matrix {
+
+        agent {
+          label "rocky8"
+        }
+
         when { anyOf {
           expression { params.PYTHON_VERSIONS == 'all' }
           expression { params.PYTHON_VERSIONS == env.PYTHON_VERSION }
