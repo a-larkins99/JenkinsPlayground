@@ -61,6 +61,7 @@ pipeline {
             steps {
               script {
                 sh '''
+                    module load conda
                     conda activate \$ENV_NAME
                     python hello.py
                 '''
@@ -71,6 +72,7 @@ pipeline {
             steps {
               script {
                 sh '''
+                    module load conda
                     conda env remove -n \$ENV_NAME
                 '''
               }
