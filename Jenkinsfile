@@ -6,7 +6,9 @@ def name_conda_env(String python_version) {
 }
 
 pipeline {
-  agent "rocky8"
+  agent {
+    label "rocky8"
+  }
   parameters {
     choice(
       name: 'PYTHON_VERSIONS',
