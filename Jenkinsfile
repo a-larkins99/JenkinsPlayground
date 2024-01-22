@@ -9,8 +9,8 @@ pipeline {
   agent "rocky8"
   parameters {
     choice(
-      name: 'PYTHON_VERSIONS'
-      choices: ['all','3.7','3.8','3.9','3.10','3.11']
+      name: 'PYTHON_VERSIONS',
+      choices: ['all','3.7','3.8','3.9','3.10','3.11'],
       description: 'Versions of python to run the build with.'
     )
   }
